@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="jquery-3.4.1.min.js"></script>  
+    <script src="js/bootstrap.min.js"></script>
+    <script type = "text/javascript" src = "script.js" ></script> 
+    <style>
+        html {
+    height: 110%;
+    margin-bottom: 0.01em;
+}
+        body{
+            background: linear-gradient(to right, #ad5389, #3c1053);
+           
+        }
+        .display-4
+        {
+            color: white;
+        }
+        .borderdiv {
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    height: auto;
+}
+h3,span{
+    color: white;
+}
+span
+{
+    font-size: 120%;
+
+}
+input[type=text], select,#textarea {
+    border-radius: 15px;
+}
+#textarea
+{
+    width: auto;
+
+}
+
+    </style>
+</head>
+<body>
+    <div class="alert alert-success successmsg"style="display: none;">Successfully created the schedule</div>
+    <div class="alert alert-danger errormsg"style="display: none;">Unable to create the schedule at this moment</div>
+    <div class="alert alert-danger errormsgrule"style="display: none;">Rulename cannot be empty</div>
+    <div class="alert alert-danger errormsgstate"style="display: none;">Choose Either "On" or "Off"</div>
+    <div class="alert alert-danger errormsginstance"style="display: none;">Instance Must be selected</div>
+    <center><h1 class ="display-4">Schedule your rule</h1></center>
+
+    <!--                       Hours section                          -->
+    <div class=" borderdiv border border-light ">
+        <div class="row h-100 justify-content-center align-items-center">
+    <div class="hour mt-3">
+        <h3> Hour</h3>
+    <input  type="text" id="hour" name="hourtext">
+    <select name="hours" id="hours"style="display: none;">
+        <option disabled selected value id="hoursoption" > -- select -- </option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+        <option value="6" >6</option>
+        <option value="7" >7</option>
+        <option value="8" >8</option>
+        <option value="9" >9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13" >13</option>
+        <option value="14">14</option>
+        <option value="15" >15</option>
+        <option value="16" >16</option>
+        <option value="17" >17</option>
+        <option value="18" >18</option>
+        <option value="19" >19</option>
+        <option value="20" >20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+    </select>
+    <select name="hoursrange" id="hoursrange"style="display: none;">
+        <option disabled selected value id="hoursrangeoption"> -- select -- </option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+        <option value="6" >6</option>
+        <option value="7" >7</option>
+        <option value="8" >8</option>
+        <option value="9" >9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13" >13</option>
+        <option value="14">14</option>
+        <option value="15" >15</option>
+        <option value="16" >16</option>
+        <option value="17" >17</option>
+        <option value="18" >18</option>
+        <option value="19" >19</option>
+        <option value="20" >20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+    </select>
+    <input type="radio" name="hour" value="all"onclick="checkhour(this.value); " ><span>All</span>
+    <input type="radio" name="hour" value="range" onclick="checkhour(this.value);" ><span>Range</span> 
+    <input type="radio" name="hour" value="selected"onclick="checkhour(this.value);" ><span>Selected</span> 
+    <input type="radio" name="hour" value="interval"onclick="checkhour(this.value);" ><span>Interval</span> 
+</div>
+</div>
+
+
+
+<!--                       Minutes section                          -->
+<div class="row h-100 justify-content-center align-items-center">
+<div class="minute mt-3">
+    <h3> Minute</h3>
+    <input type="text" id="minute" name="minutetext" >
+    <select name="minutes" id="minutes"style="display: none;">
+        <option disabled selected value id="minutesoption" >-- select -- </option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2" >2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+        <option value="37">37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+        <option value="45">45</option>
+        <option value="46">46</option>
+        <option value="47">47</option>
+        <option value="48">48</option>
+        <option value="49">49</option>
+        <option value="50">50</option>
+        <option value="51">51</option>
+        <option value="52">52</option>
+        <option value="53">53</option>
+        <option value="54">54</option>
+        <option value="55">55</option>
+        <option value="56">56</option>
+        <option value="57">57</option>
+        <option value="58">58</option>
+        <option value="59">59</option>
+    </select>
+    <select name="minutesrange" id="minutesrange"style="display: none;">
+        <option disabled selected value id="minutesrangeoption"> -- select -- </option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2" >2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+        <option value="37">37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+        <option value="45">45</option>
+        <option value="46">46</option>
+        <option value="47">47</option>
+        <option value="48">48</option>
+        <option value="49">49</option>
+        <option value="50">50</option>
+        <option value="51">51</option>
+        <option value="52">52</option>
+        <option value="53">53</option>
+        <option value="54">54</option>
+        <option value="55">55</option>
+        <option value="56">56</option>
+        <option value="57">57</option>
+        <option value="58">58</option>
+        <option value="59">59</option>
+    </select>
+    <input type="radio" name="minute" value="all"onclick="checkminute(this.value);" ><span>All</span>
+    <input type="radio" name="minute" value="range" onclick="checkminute(this.value);" ><span>Range</span> 
+    <input type="radio" name="minute" value="selected"onclick="checkminute(this.value);" ><span>Selected</span> 
+    <input type="radio" name="minute" value="interval"onclick="checkminute(this.value);" ><span>Interval</span> 
+</div>
+
+
+</div>
+
+ <!--                       Day of month section                          -->
+ <div class="row h-100 justify-content-center align-items-center">
+ <div class="dayofmonth mt-3">
+    <h3> Day Of Month</h3>
+    <input type="text" id="dayofmonth" name="dayofmonthtext" >
+    <select name="daysofmonth" id="daysofmonth"style="display: none;">
+        <option disabled selected value id="daysofmonthoption" > -- select -- </option>
+        <option value="1">1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+        <option value="6" >6</option>
+        <option value="7" >7</option>
+        <option value="8" >8</option>
+        <option value="9" >9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13" >13</option>
+        <option value="14">14</option>
+        <option value="15" >15</option>
+        <option value="16" >16</option>
+        <option value="17" >17</option>
+        <option value="18" >18</option>
+        <option value="19" >19</option>
+        <option value="20" >20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+
+    </select>
+    <select name="daysofmonthrange" id="daysofmonthrange"style="display: none;">
+        <option disabled selected value id="daysofmonthrangeoption"> -- select -- </option>
+        <option value="1">1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+        <option value="6" >6</option>
+        <option value="7" >7</option>
+        <option value="8" >8</option>
+        <option value="9" >9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13" >13</option>
+        <option value="14">14</option>
+        <option value="15" >15</option>
+        <option value="16" >16</option>
+        <option value="17" >17</option>
+        <option value="18" >18</option>
+        <option value="19" >19</option>
+        <option value="20" >20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+    </select>
+    <input type="radio" name="dayofmonth" value="all" id="dom"onclick="checkdayofmonth(this.value);" ><span>All</span>
+    <input type="radio" name="dayofmonth" value="range" id="dom"onclick="checkdayofmonth(this.value);" ><span>Range</span> 
+    <input type="radio" name="dayofmonth" value="selected"id="dom"onclick="checkdayofmonth(this.value);" ><span>Selected</span> 
+    <input type="radio" name="dayofmonth" value="interval"id="dom"onclick="checkdayofmonth(this.value);" ><span>Interval</span> 
+</div>
+</div>
+ <!--                       Month section                          -->
+ <div class="row h-100 justify-content-center align-items-center">
+ <div class="month mt-3">
+    <h3> Month</h3>
+    <input type="text" id="month" name="monthtext" >
+    <select name="months" id="months"style="display: none;">
+        <option disabled selected value id="monthsoption" > -- select -- </option>
+        <option value="JAN">JAN</option>
+        <option value="FEB" >FEB</option>
+        <option value="MAR" >MAR</option>
+        <option value="APR" >APR</option>
+        <option value="MAY" >MAY</option>
+        <option value="JUN" >JUN</option>
+        <option value="JUL" >JUL</option>
+        <option value="AUG" >AUG</option>
+        <option value="SEP" >SEP</option>
+        <option value="OCT">OCT</option>
+        <option value="NOV">NOV</option>
+        <option value="DEC">DEC</option>
+
+    </select>
+    <select name="monthsrange" id="monthsrange"style="display: none;">
+        <option disabled selected value id="monthsrangeoption" > -- select -- </option>
+        <option value="JAN">JAN</option>
+        <option value="FEB" >FEB</option>
+        <option value="MAR" >MAR</option>
+        <option value="APR" >APR</option>
+        <option value="MAY" >MAY</option>
+        <option value="JUN" >JUN</option>
+        <option value="JUL" >JUL</option>
+        <option value="AUG" >AUG</option>
+        <option value="SEP" >SEP</option>
+        <option value="OCT">OCT</option>
+        <option value="NOV">NOV</option>
+        <option value="DEC">DEC</option>
+    </select>
+
+    <select name="monthsinterval" id="monthsinterval"style="display: none;">
+        <option disabled selected value id="monthsoption" > -- select -- </option>
+        <option value="1">1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+        <option value="6" >6</option>
+        <option value="7" >7</option>
+        <option value="8" >8</option>
+        <option value="9" >9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>
+    <input type="radio" name="month" value="all"onclick="checkmonth(this.value);" ><span>All</span>
+    <input type="radio" name="month" value="range" onclick="checkmonth(this.value);" ><span>Range</span> 
+    <input type="radio" name="month" value="selected"onclick="checkmonth(this.value);" ><span>Selected</span> 
+    <input type="radio" name="month" value="interval"onclick="checkmonth(this.value);" ><span>Interval</span> 
+</div>
+</div>
+
+<!--                       Day of week section                          -->
+<div class="row h-100 justify-content-center align-items-center">
+<div class="dayofweek mt-3">
+    <h3> Day Of Week</h3>
+    <input type="text" id="dayofweek" name="dayofweektext" >
+    <select name="daysofweek" id="daysofweek"style="display: none;">
+        <option disabled selected value id="daysofweekoption" > -- select -- </option>
+        <option value="SUN">SUN</option>
+        <option value="MON" >MON</option>
+        <option value="TUE" >TUE</option>
+        <option value="WED" >WED</option>
+        <option value="THU" >THU</option>
+        <option value="FRI" >FRI</option>
+        <option value="SAT" >SAT</option>
+
+    </select>
+    <select name="daysofweekrange" id="daysofweekrange"style="display: none;">
+        <option disabled selected value id="daysofweekrangeoption"> -- select -- </option>
+        <option value="SUN">SUN</option>
+        <option value="MON" >MON</option>
+        <option value="TUE" >TUE</option>
+        <option value="WED" >WED</option>
+        <option value="THU" >THU</option>
+        <option value="FRI" >FRI</option>
+        <option value="SAT" >SAT</option>
+    </select>
+    <select name="daysofweekinterval" id="daysofweekinterval"style="display: none;">
+        <option disabled selected value id="daysofweekoption"> -- select -- </option>
+        <option value="1">1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+        <option value="6" >6</option>
+        <option value="7" >7</option>
+    </select>
+    <input type="radio" name="dayofweek" value="all"id="dow"onclick="checkdayofweek(this.value);" ><span>All</span>
+    <input type="radio" name="dayofweek" value="range" id="dow"onclick="checkdayofweek(this.value);" ><span>Range</span> 
+    <input type="radio" name="dayofweek" value="selected"id="dow"onclick="checkdayofweek(this.value);" ><span>Selected</span> 
+    <!-- <input type="radio" name="dayofweek" value="interval"id="dow"onclick="checkdayofweek(this.value);" ><span>Interval</span>  -->
+</div>
+</div>
+<!--                       Year section                          -->
+<div class="row h-100 justify-content-center align-items-center">
+<div class="year mt-3">
+    <h3> Year</h3>
+    <input type="text" id="year" name="yeartext" >
+    <select name="years" id="years"style="display: none;">
+        <option disabled selected value id="yearsoption" > -- select -- </option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+        <option value="2026">2026</option>
+        <option value="2027">2027</option>
+        <option value="2028">2028</option>
+        <option value="2029">2029</option>
+        <option value="2030">2030</option>
+
+    </select>
+    <select name="yearsrange" id="yearsrange"style="display: none;">
+        <option disabled selected value id="yearsrangeoption" > -- select -- </option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+        <option value="2026">2026</option>
+        <option value="2027">2027</option>
+        <option value="2028">2028</option>
+        <option value="2029">2029</option>
+        <option value="2030">2030</option>
+    </select>
+    <select name="yearsinterval" id="yearsinterval"style="display: none;">
+        <option disabled selected value id="yearsoption" >-- select -- </option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <input type="radio" name="year" value="all"onclick="checkyear(this.value);" ><span>All</span>
+    <input type="radio" name="year" value="range" onclick="checkyear(this.value);" ><span>Range</span> 
+    <input type="radio" name="year" value="selected"onclick="checkyear(this.value);" ><span>Selected</span> 
+    <input type="radio" name="year" value="interval"onclick="checkyear(this.value);" ><span>Interval</span> 
+</div>
+</div>
+<div class="row h-100 justify-content-center align-items-center">
+    <div class="onoff mt-5">
+        <input type="radio" name="onoff" value="ON"><span>ON</span>
+        <input type="radio" name="onoff" value="OFF" ><span>OFF</span> 
+</div>
+</div>
+<div class="row h-100 justify-content-center align-items-center">
+    <div class="instanceid mt-3">
+<select name="instance" id="instance">
+    <option disabled selected value id="instanceoption" > -- instance -- </option>
+</select>
+    </div>
+</div>
+<div class="row h-100 justify-content-center align-items-center">
+    
+    <div class="mt-1"id="setschedule"><br><br><span>Rulename:</span><input type="text" class="text" id="rulename" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" >
+    </div>
+</div>
+<div class="row h-100 justify-content-center align-items-center">
+    <div class="txtarea mt-2">
+<textarea id="textarea" rows="4" cols="75"></textarea>
+</div>
+</div>
+<div class="row h-100 justify-content-center align-items-center">
+    <div class="setschedule mt-2">
+<button type="button" class="btn btn-success" id="set">Set the schedule</button>
+    </div>
+</div>
+
+</div>
+</div>
+</body>
+</html>
