@@ -1,0 +1,10 @@
+C:\Users\HP\source\repos\Ec2StartStop\Ec2StartStop\bin\Debug\netcoreapp2.1\Ec2StartStop.deps.json
+C:\Users\HP\source\repos\Ec2StartStop\Ec2StartStop\bin\Debug\netcoreapp2.1\Ec2StartStop.runtimeconfig.json
+C:\Users\HP\source\repos\Ec2StartStop\Ec2StartStop\bin\Debug\netcoreapp2.1\Ec2StartStop.runtimeconfig.dev.json
+C:\Users\HP\source\repos\Ec2StartStop\Ec2StartStop\bin\Debug\netcoreapp2.1\Ec2StartStop.dll
+C:\Users\HP\source\repos\Ec2StartStop\Ec2StartStop\obj\Debug\netcoreapp2.1\Ec2StartStop.csprojAssemblyReference.cache
+C:\Users\HP\source\repos\Ec2StartStop\Ec2StartStop\obj\Debug\netcoreapp2.1\Ec2StartStop.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\Ec2StartStop\Ec2StartStop\obj\Debug\netcoreapp2.1\Ec2StartStop.AssemblyInfo.cs
+C:\Users\HP\source\repos\Ec2StartStop\Ec2StartStop\bin\Debug\netcoreapp2.1\Ec2StartStop.pdb
+C:\Users\HP\source\repos\Ec2StartStop\Ec2StartStop\obj\Debug\netcoreapp2.1\Ec2StartStop.dll
+C:\Users\HP\source\repos\Ec2StartStop\Ec2StartStop\obj\Debug\netcoreapp2.1\Ec2StartStop.pdb
